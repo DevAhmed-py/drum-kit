@@ -4,7 +4,7 @@ for (var i = 0; i < numberOfDrumButtons; i ++) {
     var eachButton = document.querySelectorAll(".drum")[i]
     eachButton.addEventListener("click", function() {
 
-        var buttonInnerHTML = this.InnerHTML
+        var buttonInnerHTML = this.innerHTML
 
         switch (buttonInnerHTML) {
             case "w":
@@ -27,7 +27,22 @@ for (var i = 0; i < numberOfDrumButtons; i ++) {
                 tom4.play()
                 break;
 
-            default: console.log(InnerHTML)
+            case "j":
+                var snare = new Audio("sounds/snare.mp3")
+                snare.play()
+                break;
+
+            case "k":
+                var crash = new Audio("sounds/crash.mp3")
+                crash.play()
+                break;
+
+            case "l":
+                var kickBass = new Audio("sounds/kick-bass.mp3")
+                kickBass.play()
+                break;
+
+            default: console.log(buttonInnerHTML)
         }
     })
 }
