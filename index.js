@@ -7,11 +7,15 @@ for (var i = 0; i < numberOfDrumButtons; i ++) {
         var buttonInnerHTML = this.innerHTML
 
         makeSound(buttonInnerHTML)
+
+        pressedAnimation(buttonInnerHTML)
     })
 }
 
 document.addEventListener("keydown", function(event) {
     makeSound(event.key)
+
+    pressedAnimation(event.key)
 })
 
 function makeSound(key) {
@@ -54,4 +58,12 @@ function makeSound(key) {
 
         default: console.log(buttonInnerHTML)
     }
+}
+
+function pressedAnimation(currentKey) {
+    const activeKey = document.querySelector("." + currentKey)
+
+    activeKey.classList.add('pressed')
+
+    setTimeout(() => activeKey.classList.remove('pressed'), 100)
 }
